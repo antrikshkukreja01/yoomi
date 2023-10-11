@@ -322,6 +322,9 @@ svg {
 .w-85 {
   width: 85%;
 }
+.min_vh_100 {
+  min-height: 80vh;
+}
 @media (min-width: 576px) {
   .nav-tabs .nav-link.active {
     transform: scale(1.2) !important;
@@ -376,6 +379,9 @@ svg {
   .img_width_hight {
     width: 946px;
   }
+  .min_vh_100 {
+    min-height: 50vh;
+  }
   .signup_box {
     border-radius: 32px;
     background: var(--deep-blue, #076787);
@@ -389,5 +395,10 @@ svg {
   }
   .w_181 {
     width: 181px;
+  }
+}
+@media (min-width: 1140px) {
+  .min_vh_100 {
+    min-height: 100vh !important;
   }
 }
