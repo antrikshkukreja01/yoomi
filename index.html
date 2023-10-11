@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yoomi</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/png/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/root.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- slick min css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- slick theam min css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- !-- preloader -->
+    <div class="overflow-hidden" id="hideDiv">
+      <svg class="bg-black h-100 w-100 z-3" viewBox="0 0 100 100">
+        <g
+          fill="none"
+          stroke="#fff"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="6"
+        >
+          <!-- left line -->
+          <path d="M 21 40 V 59">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              values="0 21 59; 180 21 59"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </path>
+          <!-- right line -->
+          <path d="M 79 40 V 59">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="rotate"
+              values="0 79 59; -180 79 59"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </path>
+          <!-- top line -->
+          <path d="M 50 21 V 40">
+            <animate
+              attributeName="d"
+              values="M 50 21 V 40; M 50 59 V 40"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </path>
+          <!-- btm line -->
+          <path d="M 50 60 V 79">
+            <animate
+              attributeName="d"
+              values="M 50 60 V 79; M 50 98 V 79"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </path>
+          <!-- top box -->
+          <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
+            <animate
+              attributeName="stroke"
+              values="rgba(255,255,255,1); rgba(100,100,100,0)"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </path>
+          <!-- mid box -->
+          <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z" />
+          <!-- btm box -->
+          <path d="M 50 59 L 79 78 L 50 98 L 21 78 Z">
+            <animate
+              attributeName="stroke"
+              values="rgba(100,100,100,0); rgba(255,255,255,1)"
+              dur="2s"
+              repeatCount="indefinite"
+            />
+          </path>
+          <animateTransform
+            attributeName="transform"
+            attributeType="XML"
+            type="translate"
+            values="0 0; 0 -19"
+            dur="2s"
+            repeatCount="indefinite"
+          />
+        </g>
+      </svg>
+    </div>
+    <button
+      class="animat_topbtn"
+      onclick="topFunction()"
+      id="myBtn"
+      title="Go to top"
+    >
+      <img class="w-50" src="./assets/img/png/up_icon.png" alt="up_icon" />
+    </button>
+    <div class="overflow-hidden">
+      <header class="min-vh-100 d-flex flex-column bg_header">
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-md py-4">
+          <div class="container">
+            <a class="navbar-brand" href="#"
+              ><img class="w_118" src="./assets/img/webp/logo.webp" alt="logo"
+            /></a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="collapse navbar-collapse justify-content-end gap-4"
+              id="navbarNav"
+            >
+              <ul class="navbar-nav d-flex align-items-center gap_44">
+                <li class="nav-item">
+                  <a
+                    class="nav-link nav_hover position-relative p-0 ff_inter fw-medium fs_lg text-black"
+                    href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link nav_hover position-relative p-0 ff_inter fw-medium fs_lg text-black"
+                    href="#"
+                    >News</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link nav_hover position-relative p-0 ff_inter fw-medium fs_lg text-black"
+                    href="#"
+                    >Contact Us</a
+                  >
+                </li>
+              </ul>
+              <div class="d-flex justify-content-center mt-4 mt-md-0">
+                <a
+                  class="Btn_common ff_inter fw-semibold fs_md btn_padding_1 text-decoration-none d-inline-block"
+                  href="#"
+                  >Get Started
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- Header -->
+        <section
+          class="py-5 flex-column d-flex flex-grow-1 align-items-center justify-content-center position-relative"
+        >
+          <span class="position-absolute z-0 start-0 mb-5 d-none d-md-flex">
+            <img
+              class="w-25"
+              src="./assets/img/webp/header_left_img.webp"
+              alt="left_img"
+          /></span>
+          <span
+            class="position-absolute z-0 justify-content-end mt-5 pt-5 end-0 d-none d-md-flex"
+          >
+            <img
+              class="w-25"
+              src="./assets/img/webp/header_right_img.webp"
+              alt="right_img"
+          /></span>
+          <div class="container">
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="3000"
+              class="text-center position-relative z-2"
+            >
+              <h1
+                class="ff_jakarta fw-normal fs_6xl mx-auto text-black max_820"
+              >
+                <span class="fw_800">Next Generation</span> Patient Engagement
+                and RTM Solution✨
+              </h1>
+              <p
+                class="ff_inter fw-normal fs_xxl text_gray text-capitalize mb-2 mt-2"
+              >
+                Industry leading AI motion-tracking technology
+              </p>
+              <div
+                class="d-flex align-items-center bg-white input_width_2 mx-auto justify-content-between pe-1 rounded-1 input_shadow mt-5"
+              >
+                <input
+                  class="input input_width"
+                  placeholder="Enter Your Email"
+                  type="text"
+                />
+                <a
+                  class="Btn_common btn_padding_1 text-decoration-none"
+                  href="#"
+                  >Get Started</a
+                >
+              </div>
+            </div>
+          </div>
+          <span
+            class="w-100 h_24 bg_green border_top_2 border_bottom position-absolute bottom-0"
+          ></span>
+        </section>
+      </header>
+      <!-- Desktop -->
+      <section class="py-3 bg_linear_2">
+        <div class="container mb-lg-5">
+          <div data-aos="fade-down" data-aos-duration="3000" class="px-lg-4">
+            <img
+              class="w-100"
+              src="./assets/img/webp/desktop.webp"
+              alt="desktop"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- Library -->
+      <section class="py-5">
+        <div class="container my-lg-5">
+          <div class="big_box">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <p
+                  class="ff_inter fw-medium fs_md text_green text-uppercase mb-2"
+                >
+                  Library
+                </p>
+                <h2 class="ff_jakarta fw-normal text-black fs_3xxl mb-3">
+                  Extensive Exercise
+                  <span class="fw-semibold">Library</span>
+                </h2>
+                <div class="mt-1">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="./assets/img/svg/tick.svg" alt="tick" />
+                    <p class="ff_inter fw-normal fs_md text_gray mb-0 max_360">
+                      Utilize Yoomi’s HEP templates to quickly create and assign
+                      programs to your patients
+                    </p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="./assets/img/svg/tick.svg" alt="tick" />
+                    <p class="ff_inter fw-normal fs_md text_gray mb-0 max_360">
+                      Choose from our library of exercises for all patient cases
+                    </p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="./assets/img/svg/tick.svg" alt="tick" />
+                    <p class="ff_inter fw-normal fs_md text_gray mb-0 max_370">
+                      Use Yoomi’s industry-leading exercise generation tool to
+                      create your own exercises that track adherence and form in
+                      seconds
+                    </p>
+                  </div>
+                </div>
+                <a
+                  class="Btn_common btn_padding_3 ff_inter fw-semibold fs_md text-white text-decoration-none mt-4 d-inline-block"
+                  href="#"
+                  >View the Library
+                </a>
+              </div>
+              <div class="col-lg-6 position-relative">
+                <span
+                  class="position-absolute top-20 end-1 d-flex justify-content-end"
+                >
+                  <img
+                    class="w-85"
+                    src="./assets/img/webp/bg_img_fetures.webp"
+                    alt="bg_img"
+                  />
+                </span>
+                <div class="featureslider">
+                  <img
+                    class="mx-3"
+                    src="./assets/img/webp/features.webp"
+                    alt="features"
+                  />
+                  <img
+                    class="mx-3"
+                    src="./assets/img/webp/features.webp"
+                    alt="features"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Tracking -->
+      <section class="py-5">
+        <div class="container my-lg-5">
+          <div class="big_box">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <img
+                  class="w-100"
+                  src="./assets/img/webp/tracking.webp"
+                  alt="img"
+                />
+              </div>
+              <div class="col-lg-6">
+                <p
+                  class="ff_inter fw-medium fs_md text_green text-uppercase mb-2"
+                >
+                  TRACKING
+                </p>
+                <h2 class="ff_jakarta fw-normal text-black fs_3xxl mb-3">
+                  Cutting Edge Motion
+                  <span class="fw-semibold">Tracking/ Feedback</span>
+                </h2>
+                <div class="mt-1">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="./assets/img/svg/tick.svg" alt="tick" />
+                    <p class="ff_inter fw-normal fs_md text_gray mb-0 max_360">
+                      Provides a holistic, real-time analysis of patient
+                      exercise form, capturing 300+ data points and critical
+                      metrics.
+                    </p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="./assets/img/svg/tick.svg" alt="tick" />
+                    <p class="ff_inter fw-normal fs_md text_gray mb-0 max_360">
+                      Delivers immediate feedback and guidance to correct and
+                      improve exercise form
+                    </p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img src="./assets/img/svg/tick.svg" alt="tick" />
+                    <p class="ff_inter fw-normal fs_md text_gray mb-0 max_370">
+                      Supported by the most accurate motion-tracking model
+                      designed for rehabilitation, Yoomi Vision
+                    </p>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <img src="./assets/img/svg/tick.svg" alt="tick" />
+                    <p class="ff_inter fw-normal fs_md text_gray mb-0">
+                      Requires no custom hardware, sensors, or equipment
+                    </p>
+                  </div>
+                </div>
+                <a
+                  class="Btn_common btn_padding_3 ff_inter fw-semibold fs_md text-white text-decoration-none mt-4 d-inline-block"
+                  href="#"
+                  >Test it Yourself
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- report -->
+      <section class="py-5">
+        <div class="container my-lg-5">
+          <div class="big_box">
+            <div class="row align-items-center flex-column-reverse flex-lg-row">
+              <div class="col-lg-5">
+                <p
+                  class="ff_inter fw-medium fs_md text_green text-uppercase mb-2"
+                >
+                  report
+                </p>
+                <h2 class="ff_jakarta fw-normal text-black fs_3xxl mb-3">
+                  Reporting +
+                  <span class="fw-semibold"> Analytics</span>
+                </h2>
+
+                <p class="ff_inter fw-normal fs_md text_gray mb-0 max_385">
+                  Track patient progress over time with compliance, pain, RPE,
+                  ROM and other key metrics
+                </p>
+                <a
+                  class="Btn_common btn_padding_3 ff_inter fw-semibold fs_md text-white text-decoration-none mt-4 d-inline-block"
+                  href="#"
+                  >Test it Yourself
+                </a>
+              </div>
+              <div class="col-lg-7">
+                <img
+                  class="w-100"
+                  src="./assets/img/webp/report.webp"
+                  alt="img"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Tracking -->
+      <section class="py-5">
+        <div class="container my-lg-5">
+          <div class="big_box">
+            <div class="row align-items-center">
+              <div class="col-lg-6 pe-lg-5">
+                <img
+                  class="w-100"
+                  src="./assets/img/webp/tracking_report.webp"
+                  alt="img"
+                />
+              </div>
+              <div class="col-lg-6">
+                <p
+                  class="ff_inter fw-medium fs_md text_green text-uppercase mb-2"
+                >
+                  TRACKING
+                </p>
+                <h2 class="ff_jakarta fw-normal text-black fs_3xxl mb-3">
+                  Remote Therapeutic
+                  <span class="fw-semibold">Monitoring + Billing</span>
+                </h2>
+                <p class="ff_inter fw-normal fs_md text_gray mb-0 max_444">
+                  Enhance patient care with remote monitoring, and enable
+                  providers to generate over $160 per patient per month in
+                  additional revenue
+                </p>
+
+                <a
+                  class="Btn_common btn_padding_3 ff_inter fw-semibold fs_md text-white text-decoration-none mt-4 d-inline-block"
+                  href="#"
+                  >Check Out the Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Platform -->
+      <section class="py-5 text-center bg_light_gray">
+        <div class="container my-sm-4">
+          <div class="text-center mb-md-5">
+            <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
+              Platform
+            </p>
+            <h2 class="ff_jakarta fw-normal text-black fs_4xl mb-3">
+              Through <span class="fw-semibold">Our Platform</span>
+            </h2>
+            <p class="ff_inter fw-normal fs_md text_gray mb-0">
+              We’ve helped out partners and patients achieve
+            </p>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="row align-items-center justify-content-center w_860">
+              <div class="col-12 col-sm-6 col-md-4 mt-4">
+                <div
+                  class="box box_bg_1 position-relative d-flex flex-column justify-content-center align-items-center"
+                >
+                  <span
+                    class="position-absolute bottom-0 end-0 d-flex justify-content-end"
+                  >
+                    <img
+                      class="w_100"
+                      src="./assets/img/webp/platform_box_img.webp"
+                      alt="platform_box_img"
+                    />
+                  </span>
+                  <h2
+                    class="ff_inter fw-semibold text_hover fs_5xl text-white mb-1"
+                  >
+                    50%
+                  </h2>
+                  <p
+                    class="ff_inter fw-normal fs_xl text_white text_opicity max_148 text-center mb-0"
+                  >
+                    Reduction in Pain
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 mt-4">
+                <div
+                  class="box box_bg_2 position-relative d-flex flex-column justify-content-center align-items-center"
+                >
+                  <span
+                    class="position-absolute bottom-0 end-0 d-flex justify-content-end"
+                  >
+                    <img
+                      class="w_100"
+                      src="./assets/img/webp/platform_box_img.webp"
+                      alt="platform_box_img"
+                    />
+                  </span>
+                  <h2
+                    class="ff_inter fw-semibold fs_5xl text_hover text-white mb-1"
+                  >
+                    90%
+                  </h2>
+                  <p
+                    class="ff_inter fw-normal fs_xl text_white text_opicity max_185 text-center mb-0"
+                  >
+                    Increase In-Patient Satisfaction
+                  </p>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 mt-4">
+                <div
+                  class="box box_bg_3 position-relative d-flex flex-column justify-content-center align-items-center"
+                >
+                  <span
+                    class="position-absolute bottom-0 end-0 d-flex justify-content-end"
+                  >
+                    <img
+                      class="w_100"
+                      src="./assets/img/webp/platform_box_img.webp"
+                      alt="platform_box_img"
+                    />
+                  </span>
+                  <h2
+                    class="ff_inter fw-semibold fs_5xl text_hover text-white mb-1"
+                  >
+                    60%
+                  </h2>
+                  <p
+                    class="ff_inter fw-normal fs_xl text_white text_opicity text-center mb-0"
+                  >
+                    Faster Recovery
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Forecast your profits -->
+      <section class="py-5 text-center bg_light_gray">
+        <div class="container my-sm-4">
+          <div class="text-center mb-md-5">
+            <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
+              Forecast your profits
+            </p>
+            <span class="d-flex justify-content-center">
+              <h2 class="ff_jakarta fw-normal text-black fs_4xl mb-3 max_592">
+                Calculate Your
+                <span class="fw-semibold">Reimbursement With Yoomi</span>
+              </h2></span
+            >
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-3">
+              <div class="paient_box">
+                <p class="ff_inter fw-semibold fs_md text-white">
+                  Total Patients per month
+                </p>
+                <img
+                  class="w_154 mb-4"
+                  src="./assets/img/webp/paient_counter.webp"
+                  alt="counter"
+                />
+                <a
+                  href="#"
+                  class="mt-2 fs_28 ff_inter fw-semibold text_green bg-white rounded-1 text-decoration-none w_171 d-inline-block py-2"
+                  >100
+                </a>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="row">
+                <div class="col-lg-6 mt-4 mt-md-0">
+                  <div
+                    class="price_box d-flex align-items-center justify-content-between"
+                  >
+                    <p class="ff_inter fw-semibold fs_md text-black mb-0">
+                      Initial Setup
+                    </p>
+                    <a
+                      class="Btn_common text-decoration-none btn_padding_2 ff_inter fw-semibold fs_28 text-white"
+                      href="#"
+                      >$ 40.26</a
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                  <div
+                    class="price_box d-flex align-items-center justify-content-between"
+                  >
+                    <p
+                      class="ff_inter fw-semibold text-start fs_md text-black mb-0"
+                    >
+                      First <br />
+                      20 Minutes
+                    </p>
+                    <a
+                      class="Btn_common text-decoration-none btn_padding_2 ff_inter fw-semibold fs_28 text-white"
+                      href="#"
+                      >$ 40.26</a
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                  <div
+                    class="price_box d-flex align-items-center justify-content-between"
+                  >
+                    <p
+                      class="ff_inter text-start fw-semibold fs_md text-black mb-0"
+                    >
+                      Patient <br />
+                      Monitoring
+                    </p>
+                    <a
+                      class="Btn_common text-decoration-none btn_padding_2 ff_inter fw-semibold fs_28 text-white"
+                      href="#"
+                      >$ 40.26</a
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-6 mt-4">
+                  <div
+                    class="price_box d-flex align-items-center justify-content-between"
+                  >
+                    <p
+                      class="ff_inter fw-semibold text-start fs_md text-black mb-0"
+                    >
+                      Additional <br />
+                      20 Minitutes
+                    </p>
+                    <a
+                      class="Btn_common text-decoration-none btn_padding_2 ff_inter fw-semibold fs_28 text-white"
+                      href="#"
+                      >$ 40.26</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="price_box mt-4 d-flex align-items-center flex-column flex-sm-row justify-content-between"
+          >
+            <p class="ff_inter text-start fw-semibold fs_md text-black mb-0">
+              Potential Reimbursement
+            </p>
+            <a
+              class="Btn_common text-decoration-none btn_padding_2 ff_inter mt-3 mt-sm-0 fw-semibold fs_28 text-white"
+              href="#"
+              >$ 12000</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- Partners -->
+      <section class="py-5 text-center">
+        <div class="container my-sm-5">
+          <div class="text-center mb-md-5 mt-4">
+            <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
+              Partners
+            </p>
+            <span class="d-flex justify-content-center">
+              <h2 class="ff_jakarta fw-normal text-black fs_4xl mb-3 max_684">
+                Recognized by Leading
+                <span class="fw-semibold">Healthcare Institutions</span>
+              </h2></span
+            >
+          </div>
+          <div class="row align-items-center justify-content-center d-md-none">
+            <div class="col-12 col-sm-4 mt-4">
+              <a class="box_shadow" href="#">
+                <img class="w-100" src="./assets/img/webp/nih.webp" alt="nih" />
+              </a>
+            </div>
+            <div class="col-12 col-sm-4 mt-4">
+              <a class="box_shadow" href="#">
+                <img class="w-100" src="./assets/img/webp/lvx.webp" alt="lvx" />
+              </a>
+            </div>
+            <div class="col-12 col-sm-4 mt-4">
+              <a class="box_shadow" href="#">
+                <img class="w-100" src="./assets/img/webp/rwj.webp" alt="ewj" />
+              </a>
+            </div>
+            <div class="col-12 col-sm-4 mt-4">
+              <a class="box_shadow" href="#">
+                <img class="w-100" src="./assets/img/webp/jaj.webp" alt="jaj" />
+              </a>
+            </div>
+            <div class="col-12 col-sm-4 mt-4">
+              <a class="box_shadow" href="#">
+                <img
+                  class="w-100"
+                  src="./assets/img/webp/cornal.webp"
+                  alt="cornal"
+                />
+              </a>
+            </div>
+          </div>
+          <div
+            class="align-items-center gap-4 justify-content-center d-none d-md-flex"
+          >
+            <div class="w_20">
+              <a class="box_shadow" href="#">
+                <img class="w-100" src="./assets/img/webp/nih.webp" alt="nih" />
+              </a>
+            </div>
+            <div class="w_20">
+              <a class="box_shadow" href="#">
+                <img class="w-100" src="./assets/img/webp/lvx.webp" alt="lvx" />
+              </a>
+            </div>
+            <div class="w_20">
+              <a class="box_shadow" href="#">
+                <img class="w-100" src="./assets/img/webp/rwj.webp" alt="ewj" />
+              </a>
+            </div>
+            <div class="w_20">
+              <a class="box_shadow" href="#">
+                <img class="w-100" src="./assets/img/webp/jaj.webp" alt="jaj" />
+              </a>
+            </div>
+            <div class="w_20">
+              <a class="box_shadow" href="#">
+                <img
+                  class="w-100"
+                  src="./assets/img/webp/cornal.webp"
+                  alt="cornal"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Know More  -->
+      <section class="py-5 text-center">
+        <div class="container my-sm-5">
+          <div class="text-center mb-md-5 mt-4">
+            <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
+              Know More
+            </p>
+            <span class="d-flex justify-content-center">
+              <h2 class="ff_jakarta fw-normal text-black fs_4xl mb-3 max_615">
+                And Used by the Biggest
+                <span class="fw-semibold">Figures in Sports and Rehab</span>
+              </h2></span
+            >
+          </div>
+
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane fade show active"
+              id="nav-one"
+              role="tabpanel"
+              aria-labelledby="nav-one-tab"
+              tabindex="0"
+            >
+              <img
+                class="img_width_hight"
+                src="./assets/img/webp/know_1.webp"
+                alt="know_1"
+              />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-tow"
+              role="tabpanel"
+              aria-labelledby="nav-tow-tab"
+              tabindex="0"
+            >
+              <img
+                class="img_width_hight"
+                src="./assets/img/webp/know_2.webp"
+                alt="know_1"
+              />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-three"
+              role="tabpanel"
+              aria-labelledby="nav-three-tab"
+              tabindex="0"
+            >
+              <img
+                class="img_width_hight"
+                src="./assets/img/webp/know_3.webp"
+                alt="know_1"
+              />
+            </div>
+            <div
+              class="tab-pane fade"
+              id="nav-four"
+              role="tabpanel"
+              aria-labelledby="nav-four-tab"
+              tabindex="0"
+            >
+              <img
+                class="img_width_hight"
+                src="./assets/img/webp/know_4.webp"
+                alt="know_1"
+              />
+            </div>
+          </div>
+          <nav>
+            <div
+              class="nav nav-tabs justify-content-center gap-4 mt-5"
+              id="nav-tab"
+              role="tablist"
+            >
+              <button
+                class="nav-link active"
+                id="nav-one-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-one"
+                type="button"
+                role="tab"
+                aria-controls="nav-one"
+                aria-selected="true"
+              >
+                <img
+                  class="w_118"
+                  src="./assets/img/webp/know_1.webp"
+                  alt="know_1"
+                />
+              </button>
+              <button
+                class="nav-link"
+                id="nav-tow-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-tow"
+                type="button"
+                role="tab"
+                aria-controls="nav-tow"
+                aria-selected="false"
+              >
+                <img
+                  class="w_118"
+                  src="./assets/img/webp/know_2.webp"
+                  alt="know_1"
+                />
+              </button>
+              <button
+                class="nav-link"
+                id="nav-three-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-three"
+                type="button"
+                role="tab"
+                aria-controls="nav-three"
+                aria-selected="false"
+              >
+                <img
+                  class="w_118"
+                  src="./assets/img/webp/know_3.webp"
+                  alt="know_1"
+                />
+              </button>
+              <button
+                class="nav-link"
+                id="nav-four-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#nav-four"
+                type="button"
+                role="tab"
+                aria-controls="nav-four"
+                aria-selected="false"
+              >
+                <img
+                  class="w_118"
+                  src="./assets/img/webp/know_4.webp"
+                  alt="know_1"
+                />
+              </button>
+            </div>
+          </nav>
+        </div>
+      </section>
+      <!-- The Best for you -->
+      <section class="py-5">
+        <div class="container my-lg-5">
+          <div class="row align-items-center justify-content-between">
+            <div class="col-md-6 col-lg-5">
+              <p
+                class="ff_inter fw-medium fs_md text_green text-uppercase mb-2"
+              >
+                The Best for you
+              </p>
+              <span class="d-flex justify-content-center">
+                <h2 class="ff_jakarta fw-normal text-black fs_4xl mb-0 max_615">
+                  Committed to Industry-Standard
+                  <span class="fw-semibold">Compliance and Safety</span>
+                </h2></span
+              >
+              <p
+                class="ff_inter fw-normal fs_md text_gray mb-0 mt-3 lh_24 max_426"
+              >
+                Yoomi has signed the American Physical Therapy Association
+                Digital Transparency pledge, illustrating our commitment to the
+                fact that digital "physical therapy" services are only performed
+                or directed by licensed physical therapists in accordance with
+                all regulations and APTA’s Standards of Practice for Physical
+                Therapy.
+              </p>
+            </div>
+            <div class="col-md-6 col-lg-5 mt-4 mt-md-0">
+              <div class="row align-items-center">
+                <div class="col-sm-6">
+                  <div
+                    class="best_box d-flex align-items-center justify-content-center"
+                  >
+                    <img
+                      class="w_111"
+                      src="./assets/img/webp/hipaa.webp"
+                      alt="hipaa"
+                    />
+                  </div>
+                  <div
+                    class="best_box d-flex align-items-center justify-content-center mt-4"
+                  >
+                    <img
+                      class="w_171"
+                      src="./assets/img/webp/fda.webp"
+                      alt="hipaa"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6 mt-4 mt-sm-0">
+                  <div
+                    class="best_box d-flex align-items-center justify-content-center"
+                  >
+                    <img
+                      class="w_181"
+                      src="./assets/img/webp/apta.webp"
+                      alt="hipaa"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CLIENT review -->
+      <section class="py-5">
+        <div class="container">
+          <div class="text-center mb-md-5 mt-4">
+            <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
+              CLIENT review
+            </p>
+            <span class="d-flex justify-content-center">
+              <h2 class="ff_jakarta fw-normal text-black fs_4xl mb-3 max_615">
+                What are Client Think
+                <span class="fw-semibold">About Us</span>
+              </h2></span
+            >
+          </div>
+          <div
+            class="clientslider d-flex justify-content-center align-items-center"
+          >
+            <div class="d-flex justify-content-center">
+              <div
+                class="slider_box text-center my-5 d-flex flex-column align-items-center justify-content-center mx-3"
+              >
+                <img
+                  class="w_100"
+                  src="./assets/img/webp/men_img.webp"
+                  alt="men_img"
+                />
+                <p class="ff_inter fw-medium fs_xl text-black mt-2 mb-0">
+                  Joy Robert
+                  <span class="ff_inter fw-medium fs_sm text-black"
+                    >( USA )</span
+                  >
+                </p>
+                <p class="ff_inter fw-medium fs_sm text_light_green mb-0">
+                  CEO ( yoomi )
+                </p>
+                <p class="mt-2 ff_inter fw-normal text_gray fs_md max_500">
+                  I'm a paragraph. Click here to add your own text and edit me.
+                  It’s easy. Just click “Edit Text” or double click me to add
+                  your own content and make changes to the font.
+                </p>
+                <a href="#">
+                  <img src="./assets/img/svg/star.svg" alt="star" />
+                </a>
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <div
+                class="slider_box text-center my-5 d-flex flex-column align-items-center justify-content-center mx-3"
+              >
+                <img
+                  class="w_100"
+                  src="./assets/img/webp/men_img.webp"
+                  alt="men_img"
+                />
+                <p class="ff_inter fw-medium fs_xl text-black mt-2 mb-0">
+                  Joy Robert
+                  <span class="ff_inter fw-medium fs_sm text-black"
+                    >( USA )</span
+                  >
+                </p>
+                <p class="ff_inter fw-medium fs_sm text_light_green mb-0">
+                  CEO ( yoomi )
+                </p>
+                <p class="mt-2 ff_inter fw-normal text_gray fs_md max_500">
+                  I'm a paragraph. Click here to add your own text and edit me.
+                  It’s easy. Just click “Edit Text” or double click me to add
+                  your own content and make changes to the font.
+                </p>
+                <a href="#">
+                  <img src="./assets/img/svg/star.svg" alt="star" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sign Up -->
+      <section class="py-5 bg_linear">
+        <div class="container">
+          <div class="signup_box position-relative">
+            <span
+              class="position-absolute d-flex justify-content-end bottom-0 end-0"
+            >
+              <img
+                class="w-30"
+                src="./assets/img/webp/signup_bgimg.webp"
+                alt="img"
+              />
+            </span>
+            <div
+              class="d-flex flex-column w-100 flex-md-row align-items-center justify-content-between"
+            >
+              <div class="w_440">
+                <img
+                  class="mb-4 w_288"
+                  src="./assets/img/webp/white_logo.webp"
+                  alt="logo"
+                />
+                <p
+                  class="mt-1 mb-3 mb-sm-5 ff_jakarta fw-normal fs_3xl text-white"
+                >
+                  Sign Up to Join
+                  <span class="fw-semibold">Our Newsletter</span>
+                </p>
+                <div
+                  class="d-flex align-items-center bg-white w-100 justify-content-between pe-1 rounded-1 mb-4"
+                >
+                  <input
+                    class="input input_width"
+                    placeholder="Enter Your Email"
+                    type="text"
+                  />
+                  <a
+                    class="Btn_common btn_padding_1 text-decoration-none"
+                    href="#"
+                    >Get Started</a
+                  >
+                </div>
+              </div>
+              <img
+                class="w_300 mt-4 mt-lg-0"
+                src="./assets/img/webp/old_man.webp"
+                alt="old_man"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <footer class="pt-5 bg_black">
+        <div class="container">
+          <div class="row justify-content-between pb-5">
+            <div class="col-md-4">
+              <a class="mb-2" href="#">
+                <img
+                  class="w_192"
+                  src="./assets/img/webp/white_logo.webp"
+                  alt="logo"
+                />
+              </a>
+              <p class="ff_inter fw-light fs_sm text-white max_277 mt-4 mb-4">
+                I'm a paragraph. Click here to add your own text and edit me.
+                It’s easy. Just click “Edit Text”
+              </p>
+              <div class="mt-2 d-inline-block">
+                <a
+                  href="#"
+                  class="d-flex align-items-center gap-3 text-decoration-none ff_inter fs_md fw-light text-white mb-0"
+                >
+                  <img src="./assets/img/svg/msg.svg" alt="msg" />
+
+                  contact@yoomi.com
+                </a>
+                <a
+                  href="#"
+                  class="d-flex align-items-center gap-3 text-decoration-none ff_inter fs_md fw-light text-white mb-0 mt-3"
+                >
+                  <img src="./assets/img/svg/phone.svg" alt="phone" />
+
+                  +123 456 789
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-5 mt-5 mt-md-0">
+              <div class="row">
+                <div class="col-4">
+                  <p class="ff_inter fw-semibold fs_sm text-white mb-3">
+                    About Us
+                  </p>
+                  <span class="d-block mb-3">
+                    <a
+                      class="ff_inter fw-normal footer_hover position-relative fs_sm text-white text-decoration-none"
+                      href="#"
+                    >
+                      Meet the Team
+                    </a></span
+                  >
+                  <span class="d-block mb-3">
+                    <a
+                      class="ff_inter fw-normal footer_hover position-relative fs_sm text-white text-decoration-none"
+                      href="#"
+                    >
+                      Our Mission
+                    </a></span
+                  >
+                  <span class="d-block mb-3">
+                    <a
+                      class="ff_inter fw-normal footer_hover position-relative fs_sm text-white text-decoration-none"
+                      href="#"
+                    >
+                      Our Vision
+                    </a></span
+                  >
+                </div>
+                <div class="col-4">
+                  <p class="ff_inter fw-semibold fs_sm text-white mb-3">
+                    Contact Us
+                  </p>
+                  <span class="d-block mb-3">
+                    <a
+                      class="ff_inter fw-normal footer_hover position-relative fs_sm text-white text-decoration-none"
+                      href="#"
+                    >
+                      Twitter
+                    </a></span
+                  >
+                  <span class="d-block mb-3">
+                    <a
+                      class="ff_inter fw-normal footer_hover position-relative fs_sm text-white text-decoration-none"
+                      href="#"
+                    >
+                      Instagram
+                    </a></span
+                  >
+                  <span class="d-block mb-3">
+                    <a
+                      class="ff_inter fw-normal footer_hover position-relative fs_sm text-white text-decoration-none"
+                      href="#"
+                    >
+                      Linkedin
+                    </a></span
+                  >
+                </div>
+                <div class="col-4">
+                  <p class="ff_inter fw-semibold fs_sm text-white mb-3">News</p>
+                  <span class="d-block mb-3">
+                    <a
+                      class="ff_inter fw-normal footer_hover position-relative fs_sm text-white text-decoration-none"
+                      href="#"
+                    >
+                      Recent
+                    </a></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border_top py-4">
+          <div class="container">
+            <div
+              class="d-flex align-items-center gap-3 gap-sm-4 justify-content-end"
+            >
+              <a
+                class="text_dark_gray footer_hover_2 position-relative ff_inter fs_sm fw-normal text-decoration-none"
+                href="#"
+                >Terms of Service</a
+              >
+              <a
+                class="text_dark_gray footer_hover_2 position-relative ff_inter fs_sm fw-normal text-decoration-none"
+                href="#"
+                >Privacy Policy</a
+              >
+              <a
+                class="text_dark_gray footer_hover_2 position-relative ff_inter fs_sm fw-normal text-decoration-none"
+                href="#"
+                >Cookies</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!-- j quairy min js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- slick min js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      $(".clientslider").slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: ".next2",
+        prevArrow: ".prev2",
+      });
+    </script>
+    <script>
+      $(".featureslider").slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1.1,
+        slidesToScroll: 1,
+        nextArrow: ".next2",
+        prevArrow: ".prev2",
+      });
+    </script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+    <script>
+      $(function () {
+        setTimeout(function () {
+          $("#hideDiv").fadeOut(500);
+          document.body.classList.remove("overflow-hidden");
+        }, 5000);
+      });
+    </script>
+    <script>
+      let mybutton = document.getElementById("myBtn");
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 20 ||
+          document.documentElement.scrollTop > 20
+        ) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+    </script>
+  </body>
+</html>
