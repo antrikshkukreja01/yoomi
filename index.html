@@ -30,88 +30,34 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
-  <body>
+  <body class="overflow-hidden">
     <!-- !-- preloader -->
-    <div class="overflow-hidden" id="hideDiv">
-      <svg class="bg-black h-100 w-100 z-3" viewBox="0 0 100 100">
-        <g
-          fill="none"
-          stroke="#fff"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="6"
+    <div
+      id="preloder"
+      class="min-vh-100 position-fixed top-0 start-0 d-flex justify-content-center align-items-center w-100 bg_header z-3"
+    >
+      <div id="css3-spinner-svg-pulse-wrapper">
+        <svg
+          id="css3-spinner-svg-pulse"
+          version="1.2"
+          height="210"
+          width="550"
+          xmlns="http://www.w3.org/2000/svg"
+          viewport="0 0 60 60"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
         >
-          <!-- left line -->
-          <path d="M 21 40 V 59">
-            <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="rotate"
-              values="0 21 59; 180 21 59"
-              dur="2s"
-              repeatCount="indefinite"
-            />
-          </path>
-          <!-- right line -->
-          <path d="M 79 40 V 59">
-            <animateTransform
-              attributeName="transform"
-              attributeType="XML"
-              type="rotate"
-              values="0 79 59; -180 79 59"
-              dur="2s"
-              repeatCount="indefinite"
-            />
-          </path>
-          <!-- top line -->
-          <path d="M 50 21 V 40">
-            <animate
-              attributeName="d"
-              values="M 50 21 V 40; M 50 59 V 40"
-              dur="2s"
-              repeatCount="indefinite"
-            />
-          </path>
-          <!-- btm line -->
-          <path d="M 50 60 V 79">
-            <animate
-              attributeName="d"
-              values="M 50 60 V 79; M 50 98 V 79"
-              dur="2s"
-              repeatCount="indefinite"
-            />
-          </path>
-          <!-- top box -->
-          <path d="M 50 21 L 79 40 L 50 60 L 21 40 Z">
-            <animate
-              attributeName="stroke"
-              values="rgba(255,255,255,1); rgba(100,100,100,0)"
-              dur="2s"
-              repeatCount="indefinite"
-            />
-          </path>
-          <!-- mid box -->
-          <path d="M 50 40 L 79 59 L 50 79 L 21 59 Z" />
-          <!-- btm box -->
-          <path d="M 50 59 L 79 78 L 50 98 L 21 78 Z">
-            <animate
-              attributeName="stroke"
-              values="rgba(100,100,100,0); rgba(255,255,255,1)"
-              dur="2s"
-              repeatCount="indefinite"
-            />
-          </path>
-          <animateTransform
-            attributeName="transform"
-            attributeType="XML"
-            type="translate"
-            values="0 0; 0 -19"
-            dur="2s"
-            repeatCount="indefinite"
+          <path
+            id="css3-spinner-pulse"
+            stroke="#076787"
+            fill="none"
+            stroke-width="2"
+            stroke-linejoin="round"
+            d="M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210"
           />
-        </g>
-      </svg>
+        </svg>
+      </div>
     </div>
     <button
       class="animat_topbtn"
@@ -198,7 +144,7 @@
           <div class="container">
             <div
               data-aos="zoom-in"
-              data-aos-duration="3000"
+              data-aos-duration="1500"
               class="text-center position-relative z-2"
             >
               <h1
@@ -236,7 +182,7 @@
       <!-- Desktop -->
       <section class="py-3 bg_linear_2">
         <div class="container mb-lg-5">
-          <div data-aos="fade-down" data-aos-duration="3000" class="px-lg-4">
+          <div data-aos="fade-down" data-aos-duration="1500" class="px-lg-4">
             <img
               class="w-100"
               src="./assets/img/webp/desktop.webp"
@@ -248,9 +194,9 @@
       <!-- Library -->
       <section class="py-5">
         <div class="container my-lg-5">
-          <div class="big_box">
+          <div data-aos="zoom-in-up" data-aos-duration="1500" class="big_box">
             <div class="row align-items-center">
-              <div class="col-lg-6">
+              <div class="col-md-6">
                 <p
                   class="ff_inter fw-medium fs_md text_green text-uppercase mb-2"
                 >
@@ -289,12 +235,12 @@
                   >View the Library
                 </a>
               </div>
-              <div class="col-lg-6 position-relative">
+              <div class="col-md-6 position- mt-5 mt-md-0">
                 <span
-                  class="position-absolute top-20 end-1 d-flex justify-content-end"
+                  class="position-absolute top-0 end-1 d-flex justify-content-end d-none d-md-flex"
                 >
                   <img
-                    class="w-85"
+                    class="w-50"
                     src="./assets/img/webp/bg_img_fetures.webp"
                     alt="bg_img"
                   />
@@ -311,6 +257,54 @@
                     alt="features"
                   />
                 </div>
+                <div class="d-flex align-items-center mt-3 gap-2">
+                  <svg
+                    class="prev2 pointer hover_next_prev"
+                    width="35"
+                    height="35"
+                    viewBox="0 0 35 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="17.6947"
+                      cy="17.4227"
+                      r="16.8655"
+                      stroke="black"
+                      stroke-width="0.877078"
+                    />
+                    <path
+                      d="M19.4479 13.0383L15.0625 17.4237L19.4479 21.8091"
+                      stroke="black"
+                      stroke-width="1.75416"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <svg
+                    class="next2 pointer hover_next_prev"
+                    width="35"
+                    height="35"
+                    viewBox="0 0 35 35"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="17.6947"
+                      cy="17.4227"
+                      r="16.8655"
+                      stroke="black"
+                      stroke-width="0.877078"
+                    />
+                    <path
+                      d="M15.5502 13.0383L19.9355 17.4237L15.5502 21.8091"
+                      stroke="black"
+                      stroke-width="1.75416"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -319,7 +313,7 @@
       <!-- Tracking -->
       <section class="py-5">
         <div class="container my-lg-5">
-          <div class="big_box">
+          <div data-aos="zoom-in-down" data-aos-duration="1500" class="big_box">
             <div class="row align-items-center">
               <div class="col-lg-6">
                 <img
@@ -381,7 +375,7 @@
       <!-- report -->
       <section class="py-5">
         <div class="container my-lg-5">
-          <div class="big_box">
+          <div data-aos="zoom-out-up" data-aos-duration="1500" class="big_box">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
               <div class="col-lg-5">
                 <p
@@ -416,9 +410,13 @@
         </div>
       </section>
       <!-- Tracking -->
-      <section data-aos="fade-up-right" class="py-5">
+      <section class="py-5">
         <div class="container my-lg-5">
-          <div class="big_box">
+          <div
+            data-aos="zoom-out-down"
+            data-aos-duration="1500"
+            class="big_box"
+          >
             <div class="row align-items-center">
               <div class="col-lg-6 pe-lg-5">
                 <img
@@ -456,7 +454,11 @@
       <!-- Platform -->
       <section class="py-5 text-center bg_light_gray">
         <div class="container my-sm-4">
-          <div class="text-center mb-md-5">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+            class="text-center mb-md-5"
+          >
             <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
               Platform
             </p>
@@ -471,6 +473,8 @@
             <div class="row align-items-center justify-content-center w_860">
               <div class="col-12 col-sm-6 col-md-4 mt-4">
                 <div
+                  data-aos="flip-left"
+                  data-aos-duration="1500"
                   class="box box_bg_1 position-relative d-flex flex-column justify-content-center align-items-center"
                 >
                   <span
@@ -496,6 +500,8 @@
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4">
                 <div
+                  data-aos="flip-up"
+                  data-aos-duration="1500"
                   class="box box_bg_2 position-relative d-flex flex-column justify-content-center align-items-center"
                 >
                   <span
@@ -521,6 +527,8 @@
               </div>
               <div class="col-12 col-sm-6 col-md-4 mt-4">
                 <div
+                  data-aos="flip-right"
+                  data-aos-duration="1500"
                   class="box box_bg_3 position-relative d-flex flex-column justify-content-center align-items-center"
                 >
                   <span
@@ -551,7 +559,11 @@
       <!-- Forecast your profits -->
       <section class="py-5 text-center bg_light_gray">
         <div class="container my-sm-4">
-          <div class="text-center mb-md-5">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+            class="text-center mb-md-5"
+          >
             <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
               Forecast your profits
             </p>
@@ -562,7 +574,11 @@
               </h2></span
             >
           </div>
-          <div class="row align-items-center">
+          <div
+            data-aos="zoom-in-left"
+            data-aos-duration="1500"
+            class="row align-items-center"
+          >
             <div class="col-md-3">
               <div class="paient_box">
                 <p class="ff_inter fw-semibold fs_md text-white">
@@ -651,6 +667,8 @@
             </div>
           </div>
           <div
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
             class="price_box mt-4 d-flex align-items-center flex-column flex-sm-row justify-content-between"
           >
             <p class="ff_inter text-start fw-semibold fs_md text-black mb-0">
@@ -667,7 +685,11 @@
       <!-- Partners -->
       <section class="py-5 text-center">
         <div class="container my-sm-5">
-          <div class="text-center mb-md-5 mt-4">
+          <div
+            data-aos="zoom-out-down"
+            data-aos-duration="1500"
+            class="text-center mb-md-5 mt-4"
+          >
             <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
               Partners
             </p>
@@ -678,7 +700,11 @@
               </h2></span
             >
           </div>
-          <div class="row align-items-center justify-content-center d-md-none">
+          <div
+            data-aos="zoom-out-up"
+            data-aos-duration="1500"
+            class="row align-items-center justify-content-center d-md-none"
+          >
             <div class="col-12 col-sm-4 mt-4">
               <a class="box_shadow" href="#">
                 <img class="w-100" src="./assets/img/webp/nih.webp" alt="nih" />
@@ -710,6 +736,8 @@
             </div>
           </div>
           <div
+            data-aos="zoom-out-up"
+            data-aos-duration="1500"
             class="align-items-center gap-4 justify-content-center d-none d-md-flex"
           >
             <div class="w_20">
@@ -745,7 +773,12 @@
         </div>
       </section>
       <!-- Know More  -->
-      <section class="py-5 text-center">
+      <section
+        data-aos="fade-down"
+        data-aos-anchor-placement="center-center"
+        data-aos-duration="1500"
+        class="py-5 text-center"
+      >
         <div class="container my-sm-5">
           <div class="text-center mb-md-5 mt-4">
             <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
@@ -891,7 +924,11 @@
       <section class="py-5">
         <div class="container my-lg-5">
           <div class="row align-items-center justify-content-between">
-            <div class="col-md-6 col-lg-5">
+            <div
+              data-aos="fade-right"
+              data-aos-duration="1500"
+              class="col-md-6 col-lg-5"
+            >
               <p
                 class="ff_inter fw-medium fs_md text_green text-uppercase mb-2"
               >
@@ -914,7 +951,11 @@
                 Therapy.
               </p>
             </div>
-            <div class="col-md-6 col-lg-5 mt-4 mt-md-0">
+            <div
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              class="col-md-6 col-lg-5 mt-4 mt-md-0"
+            >
               <div class="row align-items-center">
                 <div class="col-sm-6">
                   <div
@@ -955,7 +996,11 @@
       <!-- CLIENT review -->
       <section class="py-5">
         <div class="container">
-          <div class="text-center mb-md-5 mt-4">
+          <div
+            data-aos="zoom-in"
+            data-aos-duration="1500"
+            class="text-center mb-md-5 mt-4"
+          >
             <p class="ff_inter fw-medium fs_md text_green text-uppercase mb-2">
               CLIENT review
             </p>
@@ -967,11 +1012,13 @@
             >
           </div>
           <div
+            data-aos="zoom-in-down"
+            data-aos-duration="1500"
             class="clientslider d-flex justify-content-center align-items-center"
           >
             <div class="d-flex justify-content-center">
               <div
-                class="slider_box text-center my-5 d-flex flex-column align-items-center justify-content-center mx-3"
+                class="slider_box text-center mt-5 mb-4 d-flex flex-column align-items-center justify-content-center mx-3"
               >
                 <img
                   class="w_100"
@@ -999,7 +1046,7 @@
             </div>
             <div class="d-flex justify-content-center">
               <div
-                class="slider_box text-center my-5 d-flex flex-column align-items-center justify-content-center mx-3"
+                class="slider_box text-center mt-5 mb-4 d-flex flex-column align-items-center justify-content-center mx-3"
               >
                 <img
                   class="w_100"
@@ -1026,13 +1073,65 @@
               </div>
             </div>
           </div>
+          <div class="d-flex align-items-center justify-content-center gap-2">
+            <svg
+              class="prev pointer hover_next_prev"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="17.6947"
+                cy="17.4227"
+                r="16.8655"
+                stroke="black"
+                stroke-width="0.877078"
+              />
+              <path
+                d="M19.4479 13.0383L15.0625 17.4237L19.4479 21.8091"
+                stroke="black"
+                stroke-width="1.75416"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <svg
+              class="next pointer hover_next_prev"
+              width="35"
+              height="35"
+              viewBox="0 0 35 35"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="17.6947"
+                cy="17.4227"
+                r="16.8655"
+                stroke="black"
+                stroke-width="0.877078"
+              />
+              <path
+                d="M15.5502 13.0383L19.9355 17.4237L15.5502 21.8091"
+                stroke="black"
+                stroke-width="1.75416"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
         </div>
       </section>
 
       <!-- Sign Up -->
       <section class="py-5 bg_linear">
         <div class="container">
-          <div class="signup_box position-relative">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+            class="signup_box position-relative"
+          >
             <span
               class="position-absolute d-flex justify-content-end bottom-0 end-0"
             >
@@ -1084,7 +1183,11 @@
       <!-- Footer -->
       <footer class="pt-5 bg_black">
         <div class="container">
-          <div class="row justify-content-between pb-5">
+          <div
+            data-aos="zoom-in-up"
+            data-aos-duration="1500"
+            class="row justify-content-between pb-5"
+          >
             <div class="col-md-4">
               <a class="mb-2" href="#">
                 <img
@@ -1237,6 +1340,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      setTimeout(() => {
+        document.getElementById("preloder").classList.add("d-none");
+        document.body.classList.remove("overflow-hidden");
+      }, 4000);
+    </script>
     <script>
       $(".clientslider").slick({
         dots: false,
@@ -1244,8 +1354,8 @@
         speed: 300,
         slidesToShow: 1,
         slidesToScroll: 1,
-        nextArrow: ".next2",
-        prevArrow: ".prev2",
+        nextArrow: ".next",
+        prevArrow: ".prev",
       });
     </script>
     <script>
@@ -1264,14 +1374,7 @@
         once: true,
       });
     </script>
-    <script>
-      $(function () {
-        setTimeout(function () {
-          $("#hideDiv").fadeOut(500);
-          document.body.classList.remove("overflow-hidden");
-        }, 5000);
-      });
-    </script>
+
     <script>
       let mybutton = document.getElementById("myBtn");
       window.onscroll = function () {
